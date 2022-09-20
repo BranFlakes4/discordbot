@@ -1,0 +1,26 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "Discord Bot made by B Bartelli",
+  "main": "index.js",
+  "scripts": {
+    "test": ".test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BranFlakes4/discordbot.git"
+  },
+  "author": "BranFlakes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BranFlakes4/discordbot/issues"
+  },
+  "homepage": "https://github.com/BranFlakes4/discordbot#readme",
+  "dependencies": {
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1"
+  }
+}
