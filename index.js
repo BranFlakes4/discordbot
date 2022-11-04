@@ -32,12 +32,12 @@ const ROLES = {
 	RL: '1032696040266141726',
 }
 
-//gets data of custom game emojis
-const OW = client.emojis.cache.find(emoji => emoji.name === "OW");
-const VAL = client.emojis.cache.find(emoji => emoji.name === "VAL");
-const MW = client.emojis.cache.find(emoji => emoji.name === "MW");
-const MC = client.emojis.cache.find(emoji => emoji.name === "MC");
-const RL = client.emojis.cache.find(emoji => emoji.name === "RL");
+//list of custom emoji IDs
+const OW = '<:OW:1037076408436002897>';
+const VAL = '<:VAL:1037077098340290711>';
+const MW = '<:MW:1037077106099769364>';
+const MC = '<:MC:1037077091138678835>';
+const RL = '<:RL:1037076954148519966>';
 
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file);
@@ -51,34 +51,39 @@ for (const file of commandFiles) {
 client.once('ready', () => {
 	console.log('Ready!');
 	//channel in which role list will be sent
-	const channel = client.channels.cache.get('775355712271941647');
+	const channel = client.channels.cache.get('1037075189906813058');
 	//toggles sending role list on startup
 	var sendRoleMessage = true;
 	if (sendRoleMessage == true) {
 		channel.send({
-			content: 'Select your role',
+			content: 'Select Your Role(s)',
 			//list of roles/buttons
 			components: [
 				new ActionRowBuilder().setComponents(
 					new ButtonBuilder()
 						.setCustomId('ow')
-						.setEmoji("1037078513846591489")
+						//.setLabel('Overwatch')
+						.setEmoji(OW)
 						.setStyle(ButtonStyle.Primary),
 					new ButtonBuilder()
 						.setCustomId('val')
-						.setLabel('Valorant')
+						//.setLabel('Valorant')
+						.setEmoji(VAL)
 						.setStyle(ButtonStyle.Primary),
 					new ButtonBuilder()
 						.setCustomId('mw')
-						.setLabel('Modern Warfare')
+						//.setLabel('Modern Warfare')
+						.setEmoji(MW)
 						.setStyle(ButtonStyle.Primary),
 					new ButtonBuilder()
 						.setCustomId('mc')
-						.setLabel('Minecraft')
+						//.setLabel('Minecraft')
+						.setEmoji(MC)
 						.setStyle(ButtonStyle.Primary),
 					new ButtonBuilder()
 						.setCustomId('rl')
-						.setLabel('Rocket League')
+						//.setLabel('Rocket League')
+						.setEmoji(RL)
 						.setStyle(ButtonStyle.Primary)
 				)
 			],
